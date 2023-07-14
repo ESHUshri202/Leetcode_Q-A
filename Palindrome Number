@@ -1,1 +1,19 @@
-
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        long long rev=0,digit;
+        long long nums;
+        nums=x;
+        while(nums!=0){
+            digit = nums % 10;
+            rev= rev * 10 + digit;
+            nums = nums / 10;
+        }
+           
+                 
+        return (rev==x);
+    }
+};
