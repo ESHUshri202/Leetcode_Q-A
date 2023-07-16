@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int funx(int i, int target , vector<int>&nums){
+        if(i == 0) return target ==0;
+        if( i<0 ) return 0;
+        int p=funx(i-1,target+nums[i-1],nums);
+        int m=funx(i-1,target-nums[i-1],nums);
+        return p+m;
+    }
+    int findTargetSumWays(vector<int>& nums, int target) {
+        return funx(nums.size(),target,nums);
+    }
+};
